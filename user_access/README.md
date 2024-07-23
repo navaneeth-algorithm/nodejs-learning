@@ -92,6 +92,9 @@ npm install express body-parser cookie-parser jsonwebtoken
 - **userModel.js**: Model for user data.
 - **userRoutes.js**: Defines user-related routes.
 
+## Output
+https://github.com/user-attachments/assets/33ffba6d-acbf-4950-9648-405ab7552731
+
 ## License
 
 This project is licensed under the MIT License.
