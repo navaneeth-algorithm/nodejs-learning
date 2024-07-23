@@ -1,0 +1,51 @@
+# Register User
+POST http://localhost:3000/api/user/register HTTP/1.1
+Content-Type: application/json
+
+{
+    "email":"navaneeth@gmail.com",
+    "password":"noor jahan",
+    "username":"navaneeth"
+}
+
+###
+
+# Correct user credentials
+POST http://localhost:3000/api/user/login HTTP/1.1
+Content-Type: application/json
+
+{
+    "email":"navaneeth@gmail.com",
+    "password":"navaneeth@123"
+}
+
+###
+
+# Incorrect user credentials
+POST http://localhost:3000/api/user/login HTTP/1.1
+Content-Type: application/json
+
+{
+    "email":"navaneeth@gmail.com",
+    "password":"nau5344"
+}
+
+
+###
+
+POST http://localhost:3000/api/user/dashboard HTTP/1.1
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJuYXZhbmVldGhAZ21haWwuY29tIiwibmFtZSI6Ik5hdmFuZWV0aCIsImlhdCI6MTcyMTY5NjE0MSwiZXhwIjoxNzIxNjk5NzQxfQ.gkWrTNIunKVyPzSiCq18W0w_gG3IfPI9GrUu9CyS1GY
+
+###
+
+# False Authentication with False JWT
+POST http://localhost:3000/api/user/dashboard HTTP/1.1
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJuYXZhbmVldGhAZ21haWwuY29tIiwibmFtZSI6Ik5hdmFuZWV0aCIsImlhdCI6MTcyMTY5NDghiwiZXhfIjoxNzIxNjh4NDU2fQ.ng4PyEmhPELyB1hbTGFP9kMxArUjVn9IgxVCxrPWsaA
+
+###
+
+# without JWT
+POST http://localhost:3000/api/user/dashboard HTTP/1.1
+Content-Type: application/json
