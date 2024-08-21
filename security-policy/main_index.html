@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSP Test with APIs and Images</title>
+    <script src="/static/script.js"></script> <!-- External JS file -->
+</head>
+<body>
+    <h1>CSP Test with APIs and Images</h1>
+
+    <!-- Image that should load (from Unsplash) -->
+    <img src="https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d" alt="Allowed Image" width="300">
+    
+    <!-- Image that should be blocked (from Flickr) -->
+    <img src="https://live.staticflickr.com/65535/51137096365_3cf05f0c3e_b.jpg" alt="Blocked Image" width="300">
+
+    <br/><br/>
+
+    <!-- Buttons to trigger API requests -->
+    <button id="allowedApiButton">Fetch from JSONPlaceholder (Allowed)</button>
+    <button id="blockedApiButton">Fetch from Dog CEO API (Blocked)</button>
+
+    <br/><br/>
+    <div id="apiResponse"></div>
+</body>
+</html>

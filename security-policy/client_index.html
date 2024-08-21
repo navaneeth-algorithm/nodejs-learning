@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CORS Test</title>
+</head>
+
+<body>
+    <h1>CORS Test</h1>
+
+    <!-- Button to make API request to the main server -->
+    <button id="testApiButton">Test API Request (Main Server)</button>
+
+    <br /><br />
+    <div id="response"></div>
+
+    <script>
+        document.getElementById('testApiButton').addEventListener('click', function () {
+            // Make a direct request to the main server on port 3000
+            fetch('http://localhost:3000/static/script.js')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    return response.text();
+                })
+                .then(data => {
+                    document.getElementById('response').innerHTML = `<pre>${data}</pre>`;
+                })
+                .catch(error => {
+                    document.getElementById('response').innerHTML = `<p>Error: ${error.message}</p>`;
+                });
+        });
+
+    </script>
+</body>
+
+</html>
